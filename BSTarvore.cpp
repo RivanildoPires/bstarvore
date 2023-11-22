@@ -50,16 +50,28 @@ void listar(NoArvore* raiz){
         listar(raiz->direita);
     }
 }
+void listarN(NoArvore* raiz){
 
+    if(raiz != NULL){
+        cout << "Arvore nao ordenada: ";
+        cout << raiz->dados << " " ;
+        listar(raiz->esquerda);
+        listar(raiz->direita);
+        }
+}
 int main(){
     
     NoArvore* raiz = NULL;
     
-    raiz = buscaBST (raiz,7);
-    buscaBST (raiz,4);
-    buscaBST (raiz,2);
+    raiz = buscaBST (raiz,19);
+    buscaBST (raiz,10);
+    buscaBST (raiz,20);
+    buscaBST (raiz,18);
+    buscaBST (raiz,22);
+    buscaBST (raiz,21);
+    listarN(raiz);
+    cout << "\nArvore ordenada: ";
     listar(raiz);
 
-    
     return 0;
 }
